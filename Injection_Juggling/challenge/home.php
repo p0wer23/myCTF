@@ -33,7 +33,6 @@ if (isset($_GET["Search"])){
     $connect = mysqli_connect('db', 'php_docker', 'password', 'php_docker');
     $table_name = "users";
     $query = "SELECT id, Role from $table_name where Role='$search'";
-    echo "$query";
     $response = mysqli_query($connect, $query);
 
     echo "<strong>Roles:</strong>";
