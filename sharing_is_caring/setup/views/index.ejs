@@ -1,0 +1,27 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharing is Caring</title>
+</head>
+<body>
+    <h1>Sharing is Caring</h1>
+    <% if (!head && !body) { %>
+        <h2>Share your message</h2>
+        <form action="/" method="GET">
+            <label for="head">Head:</label>
+            <input type="text" id="head" name="head"><br><br>
+            <label for="body">Body:</label>
+            <input type="text" id="body" name="body"><br><br>
+            <input type="submit" value="Display"><br><br>
+            <p> You can submit your message <a href="/submit">here</a>.</p>
+            <p>Note: Don't share with robots.</p>
+        </form>
+    <% } else { %>
+        <h2><%= head %></h2>
+        <p><%- body %></p>
+    <% } %>
+</body>
+</html>

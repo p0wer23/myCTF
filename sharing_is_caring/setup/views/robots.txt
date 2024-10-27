@@ -1,0 +1,3 @@
+# robots.txt
+User-agent: *
+Disallow: /s3cr3t_fl4g_K1udg3

